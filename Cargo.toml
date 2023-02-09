@@ -12,3 +12,4 @@ http-body-util = "0.1.0-rc.2"
 bytes = "1.4.0"
 serde = { version = "1.0.152", features = ["derive"] }
 toml = "0.7.2"
+sha1 = "0.10.5"

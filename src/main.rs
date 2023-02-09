@@ -9,7 +9,7 @@ mod util;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    let config = config::Config::load().expect("failed to initialize config");
+    let config = config::Config::load().expect("failed to load config");
     let addr = config.server.ip + ":" + &config.server.port.to_string();
     let listener = TcpListener::bind(&addr).await?;
     println!("listen on {}", addr);

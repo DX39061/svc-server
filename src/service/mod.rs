@@ -25,7 +25,7 @@ pub async fn preprocess(
     }
 
     // validate token
-    let config = Config::load().unwrap();
+    let config = Config::load().expect("failed to load config");
     if let Some(token) = req.headers().get("Authorization") {
         if token.to_str().unwrap_or("") != config.server.token {
             let mut resp = Response::new(full("error: token not match"));
