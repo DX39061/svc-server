@@ -27,7 +27,7 @@ pub async fn preprocess(
     // validate token
     let config = Config::load().unwrap();
     if let Some(token) = req.headers().get("Authorization") {
-        if token.to_str().unwrap_or("") != config.server_config.token {
+        if token.to_str().unwrap_or("") != config.server.token {
             let mut resp = Response::new(full("error: token not match"));
             *resp.status_mut() = StatusCode::FORBIDDEN;
             return Ok(resp);

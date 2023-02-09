@@ -6,7 +6,7 @@ mod server;
 
 #[derive(Deserialize)]
 pub struct Config {
-    pub server_config: ServerConfig,
+    pub server: ServerConfig,
 }
 const CONFIG_PATH: [&str; 3] = [
     "/etc/svc/config.toml",
