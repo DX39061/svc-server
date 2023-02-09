@@ -1,12 +1,15 @@
+use crate::config::repo::RepoConfig;
 use crate::config::server::ServerConfig;
 use serde::Deserialize;
 use std::fs;
 
+mod repo;
 mod server;
 
 #[derive(Deserialize)]
 pub struct Config {
     pub server: ServerConfig,
+    pub repo: RepoConfig,
 }
 const CONFIG_PATH: [&str; 3] = [
     "/etc/svc/config.toml",
